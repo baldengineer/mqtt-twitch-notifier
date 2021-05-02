@@ -15,7 +15,7 @@
 #include <PubSubClient.h>
 #include <Adafruit_NeoPixel.h>
 #include "SparkFun_Qwiic_MP3_Trigger_Arduino_Library.h" 
-#include "config.h"
+#include "config.h"  // edit config.sample and rename to config.h
 #include <Wire.h>
 
 #define LED_PIN    14

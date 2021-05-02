@@ -1,3 +1,4 @@
+// rename to config.h
 /******************************* WIFI **************************************/
 #define WIFI_SSID       "SECRETS!"
 #define WIFI_PASS       "NO NO NO"
