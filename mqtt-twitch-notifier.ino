@@ -14,7 +14,7 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include <Adafruit_NeoPixel.h>
-#include "SparkFun_Qwiic_MP3_Trigger_Arduino_Library.h" 
+#include "SparkFun_Qwiic_MP3_Trigger_Arduino_Library.h"
 #include "config.h"  // edit config.sample and rename to config.h
 #include <Wire.h>
 
@@ -134,12 +134,24 @@ void callback(char* topic, byte* payload, unsigned int length) {
   }
   Serial.println();
 
+
+
   if (topic_str == "stream/twitch-attn-indi") {
     Serial.println("Processing stream/twitch-attn-indi");
     if ((char)payload[0] == '1') {
       mp3Play(2);
       arm_indicator_countdown = true;
       previous_indicator_millis = millis();
+    }
+  } else if (topic_str == "stream/yay-toggle") {
+    Serial.println("Processing stream/yay-toggle");
+    if ((char)payload[0] == '1') {
+      mp3Play(3);
+    }
+  } else if (topic_str == "stream/treat-in-queue") {
+    Serial.println("Processing stream/  treat-in-queue");
+    if ((char)payload[0] == '1') {
+      mp3Play(3);
     }
   } else {
     mp3Play(3);
